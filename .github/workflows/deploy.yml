@@ -1,0 +1,10 @@
+on:
+  push:
+    branches: [main, master]
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+      - uses: actions/checkout@v2
