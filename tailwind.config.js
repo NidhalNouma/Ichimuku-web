@@ -20,6 +20,8 @@ module.exports = {
             prim: colors.gray[700],
             sec: "#4db0e7",
             lbl: colors.gray[500],
+            txt: colors.gray[900],
+            axc: "#ad7f1c",
             btnTxt: colors.white,
         },
         screens: {

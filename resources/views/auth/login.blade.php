@@ -13,7 +13,7 @@
                             <label for="email" class="block text-lbl text-sm font-bold mb-2">{{ __('E-Mail Address') }}</label>
 
                             <div class="">
-                                <input id="email" type="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="email" type="email" class="focus:outline-none focus:border-axc shadow appearance-none border rounded w-full py-2 px-3 text-txt" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
                                     <span class="text-red-500 mt-3 text-xs italic" role="alert">
@@ -27,7 +27,7 @@
                             <label for="password" class="block text-lbl text-sm font-bold mb-2">{{ __('Password') }}</label>
 
                             <div class="">
-                                <input id="password" type="password" class="shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3" name="password" required autocomplete="current-password">
+                                <input id="password" type="password" class="focus:outline-none focus:border-axc shadow appearance-none border border-red rounded w-full py-2 px-3 text-txt mb-3" name="password" required autocomplete="current-password">
 
                                 @error('password')
                                     <span class="text-red-500 mt-3 text-xs italic" role="alert">

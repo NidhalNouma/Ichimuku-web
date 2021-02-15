@@ -5,3 +5,9 @@
 .gradient {
     background: linear-gradient(90deg, #c4e293 0%, #ad7f1c 100%);
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
