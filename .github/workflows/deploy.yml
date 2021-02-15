@@ -9,5 +9,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: cp ~/.env ./
+      - run: composer update
       - run: ./vendor/bin/sail down -v
       - run: ./vendor/bin/sail up -d

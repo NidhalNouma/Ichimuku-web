@@ -19,7 +19,7 @@
         </div>
         <!--Right Col-->
         <div class="w-full md:w-3/6 py-6 text-center">
-          <img class="w-full md:w-4/6 z-50 ml-auto" src="{{asset('images/tr3.png')}}" />
+          <img class="w-full md:w-4/6 z-50 ml-auto" src="{{asset('images/tr0.png')}}" />
         </div>
       </div>
     </div>
