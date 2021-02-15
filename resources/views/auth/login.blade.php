@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="flex my-20">
+<div class="flex mt-32">
     <div class="m-auto xl:w-2/5 sm:w-1/2 w-9/12 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
                 <h3 class="mb-5 text-prim font-bold ">{{ __('Login') }}</h3>
 
