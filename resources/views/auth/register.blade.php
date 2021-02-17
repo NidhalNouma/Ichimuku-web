@@ -59,10 +59,14 @@
                             </div>
                         </div>
 
-                        <div class="">
+                        <div class="flex items-center justify-between">
                                 <button type="submit" class="text-btnTxt bg-prim font-bold py-2 px-4 rounded">
                                     {{ __('Register') }}
                                 </button>
+
+                                    <a class="inline-block align-baseline font-bold text-sm text-prim hover:text-lbl" href="{{ route('login') }}">
+                                        {{ __('I have account') }}
+                                    </a>
                         </div>
                     </form>
                 </div>

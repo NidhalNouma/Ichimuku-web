@@ -3,7 +3,7 @@ module.exports = {
     purge: [
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
-        "./resources/**/*.vue",
+        "./resources/**/*.vue"
     ],
     darkMode: false, // or 'media' or 'class'
     theme: {
@@ -18,11 +18,11 @@ module.exports = {
             yellow: colors.amber,
 
             prim: colors.gray[700],
-            sec: "#4db0e7",
+            sec: "#b4c6d0",
             lbl: colors.gray[500],
             txt: colors.gray[900],
             axc: "#ad7f1c",
-            btnTxt: colors.white,
+            btnTxt: colors.white
         },
         screens: {
             sm: "640px",
@@ -37,13 +37,13 @@ module.exports = {
             xl: "1280px",
             // => @media (min-width: 1280px) { ... }
 
-            "2xl": "1536px",
+            "2xl": "1536px"
             // => @media (min-width: 1536px) { ... }
         },
-        extend: {},
+        extend: {}
     },
     variants: {
-        extend: {},
+        extend: {}
     },
-    plugins: [],
+    plugins: []
 };
