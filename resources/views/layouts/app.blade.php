@@ -19,7 +19,7 @@
 
 </head>
 
-<body class="leading-normal tracking-normal text-white gradient">
+<body class="leading-normal tracking-normal text-white bg-sec">
     <div>
         <nav id="header" class="fixed w-full z-30 top-0 text-white">
             <div class="flex justify-between container mx-auto p-5">
@@ -69,7 +69,7 @@
                                     <a href="{{ route('logout') }}"
                                         class="text-prim hover:text-lbl block px-3 py-2 rounded-md text-base font-medium"
                                         onclick="event.preventDefault();
-                                                                     document.getElementById('logout-form').submit();">
+                                                                         document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 

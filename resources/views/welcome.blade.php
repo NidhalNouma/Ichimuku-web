@@ -8,7 +8,7 @@
             <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
                 {{-- <p class="uppercase tracking-loose w-full">What business are you?</p> --}}
                 <h1 class="my-4 text-5xl font-bold leading-tight">
-                    Ichimok Alert
+                    Ichimoku Alert
                 </h1>
                 {{-- <img src="{{ asset('images/logo.png') }}" /> --}}
                 <p class="leading-normal text-2xl mb-8">
@@ -22,8 +22,15 @@
                 </a>
             </div>
             <!--Right Col-->
-            <div class="w-full md:w-3/6 py-6 text-center">
-                <img class="w-full md:w-4/6 z-50 ml-auto" src="{{ asset('images/tr0.png') }}" />
+            <div class="w-full md:w-3/6 py-6 text-center ml-auto">
+                {{-- <img class="w-full md:w-4/6 z-50 ml-auto" src="{{ asset('images/tr0.png') }}" /> --}}
+                {{-- <video width="100%" height="100%" controls>
+                    <source src="https://streamable.com/25ppr2" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video> --}}
+                <div style="width: 100%; height: 0px; position: relative; padding-bottom: 56.250%;"><iframe
+                        src="https://streamable.com/e/25ppr2" frameborder="0" width="100%" height="100%" allowfullscreen
+                        style="width: 100%; height: 100%; position: absolute;"></iframe></div>
             </div>
         </div>
     </div>
@@ -188,7 +195,7 @@
                         </div>
                         <div class="flex items-center justify-center">
                             <a href="{{ route('register') }}"
-                                class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                                class="mx-auto lg:mx-0 hover:underline bg-sec text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                                 Sign Up
                             </a>
                         </div>
@@ -212,7 +219,7 @@
                         </div>
                         <div class="flex items-center justify-center">
                             <a href="{{ route('register') }}"
-                                class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                                class="mx-auto lg:mx-0 hover:underline bg-sec text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                                 Sign Up
                             </a>
                         </div>

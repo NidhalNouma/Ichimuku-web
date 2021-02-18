@@ -69,7 +69,7 @@
                                     <a href="{{ route('logout') }}"
                                         class="text-prim hover:text-lbl block px-3 py-2 rounded-md text-base font-medium"
                                         onclick="event.preventDefault();
-                                                                                                         document.getElementById('logout-form').submit();">
+                                                                                                                 document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 

@@ -3,11 +3,13 @@
 @tailwind utilities;
 
 .gradient {
-    background: linear-gradient(90deg, #62dcfb 0%, #eb5569 100%);
+    /* background: linear-gradient(90deg, #62dcfb 0%, #eb5569 100%); */
+    background: #b4c6d0;
 }
 
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* overflow: hidden; */
 }

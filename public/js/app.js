@@ -1,248 +1,99 @@
-/******/ (() => { // webpackBootstrap
-/******/ 	var __webpack_modules__ = ({
-
-/***/ "./resources/js/app.js":
-/*!*****************************!*\
-  !*** ./resources/js/app.js ***!
-  \*****************************/
-/***/ (() => {
-
-var scrollpos = window.scrollY;
-var header = document.getElementById("header");
-var navcontent = document.getElementById("nav-content");
-var navaction = document.getElementById("navAction");
-var brandname = document.getElementById("brandname");
-var toToggle = document.querySelectorAll(".toggleColour");
-document.addEventListener("scroll", function () {
-  /*Apply classes for slide in bar*/
-  scrollpos = window.scrollY;
-
-  if (scrollpos > 10) {
-    header.classList.add("bg-white");
-    navaction.classList.remove("bg-white");
-    navaction.classList.add("gradient");
-    navaction.classList.remove("text-gray-800");
-    navaction.classList.add("text-white"); //Use to switch toggleColour colours
-
-    for (var i = 0; i < toToggle.length; i++) {
-      toToggle[i].classList.add("text-gray-800");
-      toToggle[i].classList.remove("text-white");
+(() => {
+    var e = {
+            99: () => {
+                window.scrollY;
+                var e = document.getElementById("header"),
+                    t = document.getElementById("nav-content"),
+                    s = document.getElementById("navAction"),
+                    n =
+                        (document.getElementById("brandname"),
+                        document.querySelectorAll(".toggleColour"));
+                document.addEventListener("scroll", function() {
+                    if (window.scrollY > 10) {
+                        e.classList.add("bg-white"),
+                            s.classList.remove("bg-white"),
+                            s.classList.add("gradient"),
+                            s.classList.remove("text-gray-800"),
+                            s.classList.add("text-white");
+                        for (var a = 0; a < n.length; a++)
+                            n[a].classList.add("text-gray-800"),
+                                n[a].classList.remove("text-white");
+                        e.classList.add("shadow"),
+                            t.classList.remove("bg-gray-100"),
+                            t.classList.add("bg-white");
+                    } else {
+                        e.classList.remove("bg-white"),
+                            s.classList.remove("gradient"),
+                            s.classList.add("bg-white"),
+                            s.classList.remove("text-white"),
+                            s.classList.add("text-gray-800");
+                        for (a = 0; a < n.length; a++)
+                            n[a].classList.add("text-white"),
+                                n[a].classList.remove("text-gray-800");
+                        e.classList.remove("shadow"),
+                            t.classList.remove("bg-white"),
+                            t.classList.add("bg-gray-100");
+                    }
+                });
+                var a = document.getElementById("nav-content"),
+                    r = document.getElementById("nav-toggle");
+                function o(e, t) {
+                    for (; e.parentNode; ) {
+                        if (e == t) return !0;
+                        e = e.parentNode;
+                    }
+                    return !1;
+                }
+                document.onclick = function(e) {
+                    var t = (e && e.target) || (event && event.srcElement);
+                    o(t, a) ||
+                        (o(t, r) && a.classList.contains("hidden")
+                            ? a.classList.remove("hidden")
+                            : a.classList.add("hidden"));
+                };
+            },
+            916: () => {}
+        },
+        t = {};
+    function s(n) {
+        if (t[n]) return t[n].exports;
+        var a = (t[n] = { exports: {} });
+        return e[n](a, a.exports, s), a.exports;
     }
-
-    header.classList.add("shadow");
-    navcontent.classList.remove("bg-gray-100");
-    navcontent.classList.add("bg-white");
-  } else {
-    header.classList.remove("bg-white");
-    navaction.classList.remove("gradient");
-    navaction.classList.add("bg-white");
-    navaction.classList.remove("text-white");
-    navaction.classList.add("text-gray-800"); //Use to switch toggleColour colours
-
-    for (var i = 0; i < toToggle.length; i++) {
-      toToggle[i].classList.add("text-white");
-      toToggle[i].classList.remove("text-gray-800");
-    }
-
-    header.classList.remove("shadow");
-    navcontent.classList.remove("bg-white");
-    navcontent.classList.add("bg-gray-100");
-  }
-});
-/*Toggle dropdown list*/
-
-/*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
-
-var navMenuDiv = document.getElementById("nav-content");
-var navMenu = document.getElementById("nav-toggle");
-document.onclick = check;
-
-function check(e) {
-  var target = e && e.target || event && event.srcElement; //Nav Menu
-
-  if (!checkParent(target, navMenuDiv)) {
-    // click NOT on the menu
-    if (checkParent(target, navMenu)) {
-      // click on the link
-      if (navMenuDiv.classList.contains("hidden")) {
-        navMenuDiv.classList.remove("hidden");
-      } else {
-        navMenuDiv.classList.add("hidden");
-      }
-    } else {
-      // click both outside link and outside menu, hide menu
-      navMenuDiv.classList.add("hidden");
-    }
-  }
-}
-
-function checkParent(t, elm) {
-  while (t.parentNode) {
-    if (t == elm) {
-      return true;
-    }
-
-    t = t.parentNode;
-  }
-
-  return false;
-}
-
-/***/ }),
-
-/***/ "./resources/css/app.css":
-/*!*******************************!*\
-  !*** ./resources/css/app.css ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ })
-
-/******/ 	});
-/************************************************************************/
-/******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
-/******/ 	
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/ 		// Check if module is in cache
-/******/ 		if(__webpack_module_cache__[moduleId]) {
-/******/ 			return __webpack_module_cache__[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
-/******/ 			exports: {}
-/******/ 		};
-/******/ 	
-/******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/ 	
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = __webpack_modules__;
-/******/ 	
-/******/ 	// the startup function
-/******/ 	// It's empty as some runtime module handles the default behavior
-/******/ 	__webpack_require__.x = x => {};
-/************************************************************************/
-/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = (exports) => {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/jsonp chunk loading */
-/******/ 	(() => {
-/******/ 		// no baseURI
-/******/ 		
-/******/ 		// object to store loaded and loading chunks
-/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
-/******/ 		// Promise = chunk loading, 0 = chunk loaded
-/******/ 		var installedChunks = {
-/******/ 			"/js/app": 0
-/******/ 		};
-/******/ 		
-/******/ 		var deferredModules = [
-/******/ 			["./resources/js/app.js"],
-/******/ 			["./resources/css/app.css"]
-/******/ 		];
-/******/ 		// no chunk on demand loading
-/******/ 		
-/******/ 		// no prefetching
-/******/ 		
-/******/ 		// no preloaded
-/******/ 		
-/******/ 		// no HMR
-/******/ 		
-/******/ 		// no HMR manifest
-/******/ 		
-/******/ 		var checkDeferredModules = x => {};
-/******/ 		
-/******/ 		// install a JSONP callback for chunk loading
-/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
-/******/ 			var [chunkIds, moreModules, runtime, executeModules] = data;
-/******/ 			// add "moreModules" to the modules object,
-/******/ 			// then flag all "chunkIds" as loaded and fire callback
-/******/ 			var moduleId, chunkId, i = 0, resolves = [];
-/******/ 			for(;i < chunkIds.length; i++) {
-/******/ 				chunkId = chunkIds[i];
-/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
-/******/ 					resolves.push(installedChunks[chunkId][0]);
-/******/ 				}
-/******/ 				installedChunks[chunkId] = 0;
-/******/ 			}
-/******/ 			for(moduleId in moreModules) {
-/******/ 				if(__webpack_require__.o(moreModules, moduleId)) {
-/******/ 					__webpack_require__.m[moduleId] = moreModules[moduleId];
-/******/ 				}
-/******/ 			}
-/******/ 			if(runtime) runtime(__webpack_require__);
-/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
-/******/ 			while(resolves.length) {
-/******/ 				resolves.shift()();
-/******/ 			}
-/******/ 		
-/******/ 			// add entry modules from loaded chunk to deferred list
-/******/ 			if(executeModules) deferredModules.push.apply(deferredModules, executeModules);
-/******/ 		
-/******/ 			// run deferred modules when all chunks ready
-/******/ 			return checkDeferredModules();
-/******/ 		}
-/******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunk"] = self["webpackChunk"] || [];
-/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
-/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
-/******/ 		
-/******/ 		function checkDeferredModulesImpl() {
-/******/ 			var result;
-/******/ 			for(var i = 0; i < deferredModules.length; i++) {
-/******/ 				var deferredModule = deferredModules[i];
-/******/ 				var fulfilled = true;
-/******/ 				for(var j = 1; j < deferredModule.length; j++) {
-/******/ 					var depId = deferredModule[j];
-/******/ 					if(installedChunks[depId] !== 0) fulfilled = false;
-/******/ 				}
-/******/ 				if(fulfilled) {
-/******/ 					deferredModules.splice(i--, 1);
-/******/ 					result = __webpack_require__(__webpack_require__.s = deferredModule[0]);
-/******/ 				}
-/******/ 			}
-/******/ 			if(deferredModules.length === 0) {
-/******/ 				__webpack_require__.x();
-/******/ 				__webpack_require__.x = x => {};
-/******/ 			}
-/******/ 			return result;
-/******/ 		}
-/******/ 		var startup = __webpack_require__.x;
-/******/ 		__webpack_require__.x = () => {
-/******/ 			// reset startup function so it can be called again when more startup code is added
-/******/ 			__webpack_require__.x = startup || (x => {});
-/******/ 			return (checkDeferredModules = checkDeferredModulesImpl)();
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/************************************************************************/
-/******/ 	// run startup
-/******/ 	__webpack_require__.x();
-/******/ })()
-;
+    (s.m = e),
+        (s.x = e => {}),
+        (s.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t)),
+        (() => {
+            var e = { 773: 0 },
+                t = [[99], [916]],
+                n = e => {},
+                a = (a, r) => {
+                    for (
+                        var o, l, [d, i, c, g] = r, h = 0, m = [];
+                        h < d.length;
+                        h++
+                    )
+                        (l = d[h]),
+                            s.o(e, l) && e[l] && m.push(e[l][0]),
+                            (e[l] = 0);
+                    for (o in i) s.o(i, o) && (s.m[o] = i[o]);
+                    for (c && c(s), a && a(r); m.length; ) m.shift()();
+                    return g && t.push.apply(t, g), n();
+                },
+                r = (self.webpackChunk = self.webpackChunk || []);
+            function o() {
+                for (var n, a = 0; a < t.length; a++) {
+                    for (var r = t[a], o = !0, l = 1; l < r.length; l++) {
+                        var d = r[l];
+                        0 !== e[d] && (o = !1);
+                    }
+                    o && (t.splice(a--, 1), (n = s((s.s = r[0]))));
+                }
+                return 0 === t.length && (s.x(), (s.x = e => {})), n;
+            }
+            r.forEach(a.bind(null, 0)), (r.push = a.bind(null, r.push.bind(r)));
+            var l = s.x;
+            s.x = () => ((s.x = l || (e => {})), (n = o)());
+        })(),
+        s.x();
+})();
