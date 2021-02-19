@@ -8,9 +8,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      # - run: cp ~/.env ./
-      # - run: npm install
-      # - run: npm run prod
-      # - run: composer install
-      # - run: ./vendor/bin/sail down -v
-      # - run: ./vendor/bin/sail up -d
+      - run: cp ~/.env ./
+      - run: npm install
+      - run: npm run prod
+      - run: composer install
+      - run: ./vendor/bin/sail down -v
+      - run: ./vendor/bin/sail up -d

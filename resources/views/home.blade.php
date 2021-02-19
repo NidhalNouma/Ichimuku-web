@@ -18,15 +18,13 @@
             <div class="text-center pt-4">
 
                 @if (session('status'))
-                    <div class="my-5 w-1/2 mx-auto bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
+                    <div class="my-5 w-1/2 mx-auto bg-orange-200 border-l-4 border-orange-500 text-orange-700 p-4 relative"
                         role="alert">
-                        <strong class="font-bold">Something wrong!</strong>
-                        <span class="block sm:inline">{{ session('status') }}</span>
+                        <p class="block sm:inline">{{ session('status') }}</p>
                     </div>
                 @endif
-
                 <div id="app" class="mt-8">
-                    <app usr="{{ Auth::user() }}" sesson="{{ session('status') }}">
+                    <app csrf="{{ csrf_token() }}" usr="{{ Auth::user() }}" sesson="{{ session('status') }}">
                     </app>
                 </div>
             </div>

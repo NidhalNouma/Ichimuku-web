@@ -6,8 +6,18 @@
             <Price v-bind:value="p1" @click="selectPrice" />
             <Price v-bind:value="p2" @click="selectPrice" />
         </div>
-        <Checkout v-if="p1.select === true" v-bind:pr="p1" :usr="usr" />
-        <Checkout v-else-if="p2.select === true" v-bind:pr="p2" :usr="usr" />
+        <Checkout
+            v-if="p1.select === true"
+            v-bind:pr="p1"
+            :usr="usr"
+            :csrf="csrf"
+        />
+        <Checkout
+            v-else-if="p2.select === true"
+            v-bind:pr="p2"
+            :usr="usr"
+            :csrf="csrf"
+        />
     </div>
 </template>
 
@@ -15,10 +25,10 @@
 import Checkout from "./Checkout.vue";
 import Price from "./Price.vue";
 export default {
-    props: ["usr", "session"],
+    props: ["usr", "session", "csrf"],
     components: { Price, Checkout },
     mounted() {
-        console.log(this.session);
+        // console.log(this.csrf);
     },
     data() {
         return {

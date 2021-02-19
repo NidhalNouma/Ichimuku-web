@@ -16,6 +16,7 @@ module.exports = {
             indigo: colors.indigo,
             red: colors.rose,
             yellow: colors.amber,
+            orange: colors.orange,
 
             prim: colors.gray[700],
             sec: "#b4c6d0",
