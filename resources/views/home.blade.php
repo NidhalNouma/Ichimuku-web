@@ -13,7 +13,6 @@
             stroke="#b4c6d0" stroke-width="0.008" fill="none" />
     </svg>
     <div class="mt-20">
-
         <section class="text-gray-600 body-font overflow-hidden">
             <div class="text-center pt-4">
 
@@ -24,7 +23,8 @@
                     </div>
                 @endif
                 <div id="app" class="mt-8">
-                    <app csrf="{{ csrf_token() }}" usr="{{ Auth::user() }}" sesson="{{ session('status') }}">
+                    <app csrf="{{ csrf_token() }}" usr="{{ Auth::user() }}" sesson="{{ session('status') }}"
+                        customer="{{ $customer }}" @if ($payment === null) payment="" @else payment="{{ $payment->card->toJson() }}" @endif>
                     </app>
                 </div>
             </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $customer = Auth::user()->createOrGetStripeCustomer()->toJson();
+        $payment = Auth::user()->defaultPaymentMethod(); //->paymentMethod();
+
+        // dd($payment);
+        return view('home', compact('customer', 'payment')); //->with('customer', $customer)->with('payment',  $payment);
     }
 }

@@ -1,5 +1,6 @@
 <template>
     <div>
+        <Subscription :sub="sub" v-if="sub.length > 0" />
         <div
             class="flex flex-col sm:flex-row justify-center pt-12 my-12 sm:my-4"
         >
@@ -11,12 +12,16 @@
             v-bind:pr="p1"
             :usr="usr"
             :csrf="csrf"
+            :cust="sub"
+            :card="payment"
         />
         <Checkout
             v-else-if="p2.select === true"
             v-bind:pr="p2"
             :usr="usr"
             :csrf="csrf"
+            :cust="sub"
+            :card="payment"
         />
     </div>
 </template>
@@ -24,11 +29,13 @@
 <script>
 import Checkout from "./Checkout.vue";
 import Price from "./Price.vue";
+import Subscription from "./Subscriptions.vue";
+
 export default {
-    props: ["usr", "session", "csrf"],
-    components: { Price, Checkout },
+    props: ["usr", "session", "csrf", "customer", "payment"],
+    components: { Price, Checkout, Subscription },
     mounted() {
-        // console.log(this.csrf);
+        console.log(JSON.parse(this.customer));
     },
     data() {
         return {
@@ -37,15 +44,18 @@ export default {
                 title: "Monthly",
                 price: 19.99,
                 priceTxt: "/ per mounth",
-                select: false
+                select: false,
+                pId: process.env.MIX_PRICE_M
             },
             p2: {
                 id: 2,
-                title: "Annully",
+                title: "Annually",
                 price: 199.99,
                 priceTxt: "/ per year",
-                select: false
-            }
+                select: false,
+                pId: process.env.MIX_PRICE_Y
+            },
+            sub: this.getSub(this.customer)
         };
     },
     methods: {
@@ -57,6 +67,26 @@ export default {
                 this.p2.select = true;
                 this.p1.select = false;
             }
+        },
+        getSub(cus) {
+            let r = [];
+            cus = JSON.parse(this.customer);
+            if (cus.subscriptions) {
+                const data = cus.subscriptions.data;
+                if (data.length > 0) {
+                    data.map(i => {
+                        i.plan._id = i.id;
+                        i.plan.endat = i.current_period_end;
+                        if (i.plan.id === process.env.MIX_PRICE_M)
+                            i.plan.price = "p1";
+                        else if (i.plan.price === process.env.MIX_PRICE_Y)
+                            i.plan.id = "p2";
+                        r.push(i.plan);
+                    });
+                }
+            }
+            // console.log(r);
+            return r;
         }
     }
 };
