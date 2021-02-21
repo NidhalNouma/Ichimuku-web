@@ -208,7 +208,7 @@ export default {
                 })
                 .then(function(res) {
                     console.log(res);
-                    if (res.data.cus) {
+                    if (res.data.upd) {
                         window.location.reload();
                     }
                     vue.sub = false;
