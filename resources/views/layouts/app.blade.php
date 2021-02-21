@@ -64,12 +64,12 @@
                                 <div class="pr-5 flex items-center" aria-labelledby="navbarDropdown">
                                     <a href="{{ route('home') }}"
                                         class="text-prim hover:text-lbl block px-3 py-2 rounded-md text-base font-bold">
-                                        {{ __('Home') }}
+                                        {{ __('Dashboard') }}
                                     </a>
                                     <a href="{{ route('logout') }}"
                                         class="text-prim hover:text-lbl block px-3 py-2 rounded-md text-base font-medium"
                                         onclick="event.preventDefault();
-                                                                         document.getElementById('logout-form').submit();">
+                                                                             document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 

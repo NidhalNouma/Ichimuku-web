@@ -26,7 +26,10 @@ class HomeController extends Controller
     {
         $customer = Auth::user()->createOrGetStripeCustomer()->toJson();
         $payment = Auth::user()->defaultPaymentMethod(); //->paymentMethod();
-
+        if($payment !== null){
+            $payment = json_encode(["card"=> $payment->card, 'id'=>$payment->id]);
+        }
+        
         // dd($payment);
         return view('home', compact('customer', 'payment')); //->with('customer', $customer)->with('payment',  $payment);
     }

@@ -19,7 +19,7 @@
 
 </head>
 
-<body class="leading-normal tracking-normal text-white">
+<body class="leading-normal tracking-normal text-white texture">
     <div>
         <nav id="header" class="fixed w-full z-30 top-0 text-white bg-white">
             <div class="flex justify-between container mx-auto p-5">
@@ -64,12 +64,12 @@
                                 <div class="pr-5 flex items-center" aria-labelledby="navbarDropdown">
                                     <a href="{{ route('home') }}"
                                         class="text-prim hover:text-lbl block px-3 py-2 rounded-md text-base font-bold">
-                                        {{ __('Home') }}
+                                        {{ __('Dashboard') }}
                                     </a>
                                     <a href="{{ route('logout') }}"
                                         class="text-prim hover:text-lbl block px-3 py-2 rounded-md text-base font-medium"
                                         onclick="event.preventDefault();
-                                                                                                                 document.getElementById('logout-form').submit();">
+                                                                                                                         document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 

@@ -20,6 +20,9 @@ Route::get('/', function () {
 
 
 Route::post('/checkout', [StripeController::class, 'index']);
+Route::post('/update', [StripeController::class, 'update']);
+Route::post('/delete', [StripeController::class, 'delete']);
+Route::post('/paymethod', [StripeController::class, 'paymethod']);
 
 Auth::routes();
 

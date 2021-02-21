@@ -1,12 +1,12 @@
 <template>
     <div class="flex items-center justify-center mb-6">
         <span class="p-4 font-bold text-prim bg-sec rounded">
-            {{ card.brand }}
+            {{ pay.card.brand }}
         </span>
         <div class="flex flex-col mx-4 items-start">
-            <span> ****{{ card.last4 }} </span>
+            <span> ****{{ pay.card.last4 }} </span>
             <span class="text-gray-400">
-                Expire on {{ card.exp_month }}/{{ card.exp_year }}
+                Expire on {{ pay.card.exp_month }}/{{ pay.card.exp_year }}
             </span>
         </div>
         <div>
@@ -22,13 +22,13 @@
 
 <script>
 export default {
-    props: ["card"],
+    props: ["pay", "setPay"],
     mounted() {
-        // console.log(this.card);
+        // console.log(this.pay);
     },
     methods: {
-        change() {
-            console.log(this.card);
+        change(pay) {
+            this.setPay(null);
         }
     }
 };

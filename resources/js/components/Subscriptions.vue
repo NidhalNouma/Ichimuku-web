@@ -7,7 +7,7 @@
             <p class="font-bold mb-2">Subscriptions</p>
             <p class="text-sm" v-for="i in sub" :key="i._id">
                 You have
-                {{ i.price === "p1" ? "Monthly" : "Annully" }} subscriptione.
+                {{ i.price === "p1" ? "Monthly" : "Annually" }} subscription.
                 Renew On {{ timestamp(i.endat) }}
             </p>
         </div>

@@ -10,18 +10,26 @@
         <Checkout
             v-if="p1.select === true"
             v-bind:pr="p1"
+            :ptotal="{ p1, p2 }"
             :usr="usr"
             :csrf="csrf"
             :cust="sub"
             :card="payment"
+            :subs="sub"
+            @setCust="setCustomer"
+            @setPayment="setPayment"
         />
         <Checkout
             v-else-if="p2.select === true"
             v-bind:pr="p2"
+            :ptotal="{ p1, p2 }"
             :usr="usr"
             :csrf="csrf"
             :cust="sub"
             :card="payment"
+            :subs="sub"
+            @setCust="setCustomer"
+            @setPayment="setPayment"
         />
     </div>
 </template>
@@ -87,6 +95,12 @@ export default {
             }
             // console.log(r);
             return r;
+        },
+        setCustomer(cust) {
+            this.customer = JSON.stringify(cust);
+        },
+        setPayment(pay) {
+            this.payment = JSON.stringify(pay);
         }
     }
 };
