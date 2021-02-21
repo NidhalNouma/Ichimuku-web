@@ -43,7 +43,7 @@ export default {
     props: ["usr", "session", "csrf", "customer", "payment"],
     components: { Price, Checkout, Subscription },
     mounted() {
-        console.log(JSON.parse(this.customer));
+        // console.log(JSON.parse(this.customer));
     },
     data() {
         return {
