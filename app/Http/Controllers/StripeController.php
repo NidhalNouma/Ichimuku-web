@@ -6,39 +6,54 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Models\Subscriptions;
 use App\Models\User;
+use Exception;
 
 class StripeController extends Controller
 {
     //
-
     public function index(Request $req)
     {
-        $done = false;
-        $stripeCustomer = $req->user()->createOrGetStripeCustomer();
-
-        if ($req->user() && !$req->user()->subscribed((string)$req->name)) {
-            // This user is not a paying customer...
-            $sub = $req->user()->newSubscription(
-                // (string)$req->name
-                'TView-1',
-                $req->pr
-            )->create($req->paymentMethodId);
-            $done = true;
+        $sub = null;
+        $err = null;
+        try {
+            if ($req->user() && !$req->user()->subscribed('TView-1')) {
+                // This user is not a paying customer...
+                $sub = $req->user()->newSubscription(
+                    // (string)$req->name
+                    'TView-1',
+                    $req->pr
+                )->create($req->paymentMethodId);
+            }
+        } catch (Exception $e) {
+            $err = $e;
         }
 
-        return ['cus' => $stripeCustomer, 'sub', $sub, 'pay' => $req->card, 'done' => $done];
+        return ['sub' => $sub, 'err' => $err];
     }
 
     public function update(Request $req)
     {
-        $upd = $req->user()->subscription('TView-1')->swap($req->pr);
-        return ['upd' => $upd];
+        $upd = null;
+        $err = null;
+
+        try {
+            $upd = $req->user()->subscription('TView-1')->swap($req->pr);
+        } catch (Exception $e) {
+            $err = $e;
+        }
+        return ['upd' => $upd, 'err' => $err, 'req' => $req->pr];
     }
 
     public function delete(Request $req)
     {
-        $can = $req->user()->subscription('TView-1')->cancelNow();
-        return ['can' => $can];
+        $err = null;
+        $can = null;
+        try {
+            $can = $req->user()->subscription('TView-1')->cancelNow();
+        } catch (Exception $e) {
+            $err = $e;
+        }
+        return ['can' => $can, 'err' => $err];
     }
 
     public function paymethod(Request $req)

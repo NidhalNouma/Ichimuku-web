@@ -74,8 +74,10 @@ export default {
                 })
                 .then(function(response) {
                     console.log(response);
-                    vue.accept = false;
-                    window.location.reload();
+                    vue.accepttxt = false;
+                    if (response.data.can) {
+                        window.location.reload();
+                    }
                 })
                 .catch(function(err) {
                     console.error("cancel subscription => ", err);

@@ -177,7 +177,7 @@ export default {
                 })
                 .then(function(res) {
                     console.log(res);
-                    if (res.data.cus) {
+                    if (res.data.sub) {
                         // vue.cust = vue.getSub(res.data.cus);
                         window.location.reload();
                         // vue.$emit("setCust", res.data.cus);

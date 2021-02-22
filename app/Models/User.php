@@ -42,7 +42,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function subscription()
+    public function getSubscription()
     {
         return $this->hasMany(Subscriptions::class);
     }
