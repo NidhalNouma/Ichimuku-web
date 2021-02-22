@@ -1,8 +1,9 @@
 <template>
     <div>
         <Subscription :sub="sub" v-if="sub.length > 0" />
+        <UserName :csrf="csrf" :usr="JSON.parse(this.usr)" />
         <div
-            class="flex flex-col sm:flex-row justify-center pt-12 my-12 sm:my-4"
+            class="flex flex-col sm:flex-row justify-center pt-4 my-12 sm:my-4"
         >
             <Price v-bind:value="p1" @click="selectPrice" />
             <Price v-bind:value="p2" @click="selectPrice" />
@@ -38,12 +39,13 @@
 import Checkout from "./Checkout.vue";
 import Price from "./Price.vue";
 import Subscription from "./Subscriptions.vue";
+import UserName from "./UserName.vue";
 
 export default {
     props: ["usr", "session", "csrf", "customer", "payment"],
-    components: { Price, Checkout, Subscription },
+    components: { Price, Checkout, Subscription, UserName },
     mounted() {
-        // console.log(JSON.parse(this.customer));
+        // console.log(JSON.parse(this.usr));
     },
     data() {
         return {

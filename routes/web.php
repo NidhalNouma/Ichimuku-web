@@ -23,6 +23,9 @@ Route::post('/checkout', [StripeController::class, 'index']);
 Route::post('/update', [StripeController::class, 'update']);
 Route::post('/delete', [StripeController::class, 'delete']);
 Route::post('/paymethod', [StripeController::class, 'paymethod']);
+Route::post('/user/edit', [StripeController::class, 'updateUserTV']);
+
+Route::get('/getall', [StripeController::class, 'getall']);
 
 Auth::routes();
 
